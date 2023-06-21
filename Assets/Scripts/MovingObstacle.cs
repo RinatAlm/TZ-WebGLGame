@@ -15,9 +15,7 @@ public class MovingObstacle : MonoBehaviour
             if (transform.position.x < GameManager.instance.destroyPosX)
                 Destroy(gameObject);
         }
-           
-           
-    }
+}
 
     private void Move()
     {
@@ -26,7 +24,7 @@ public class MovingObstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))//GameOver if player is inside of collider
+        if (collision.gameObject.CompareTag("Player"))//GameOver if player is inside of collider
         {
             GameManager.instance.GameOver();
         }
